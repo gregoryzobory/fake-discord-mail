@@ -1,0 +1,13 @@
+{
+    "smtp": {
+        "host": "localhost",
+        "port": 465,
+        "auth": {
+            "user": "noreply@discordapp.tk",
+            "pass": "1234"
+        },
+        "secure": true
+    },
+    "port": 1111,
+    "domain": "discordapp.tk"
+}

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            body {
+                text-align: center;
+                background-color: #23272A;
+                color: #ffffff;
+            }
+            form input, form select {
+                background-color: #2C2F33;
+                padding: 10px;
+                border: 1px solid white;
+                color: white;
+                margin-top: 10px;
+                min-width: 199px;
+            }
+        </style>
+    </head>
+    <body onload="load()">
+        <h1>Discord fake mail</h1><p><a href="https://github.com/juby210-PL/fake-discord-mail" target="_blank">Github</a></p>
+        <form action="/send" method="POST">
+            <select id="sel" name="type" onchange="changesel(this)"></select><br>
+            <input type="text" placeholder="Nick" name="nick"><br>
+            <input type="email" placeholder="Email" name="email"><br>
+            <input type="text" placeholder="Bot name" name="bot" id="bot" style="visibility: hidden"><br>
+            <input type="submit" value="Submit"><br>
+            <select name="from">
+                <option name="discordapp.com">discordapp.com (may not work on gmail)</option>
+                <option name="discordapp.tk">discordapp.tk</option>
+            </select>
+        </form>
+        <script>
+            let types = ['password-change', 'nitro-end', 'account-disabled', 'token-reset', 'tos-violation-raid', 'tos-violation-token', 'tos-violation-bot-gore', 'tos-violation-gore', 'tos-violation-underage'];
+            function load() {
+                types.forEach(t => {
+                    let opt = document.createElement('option');
+                    opt.innerText = t;
+                    opt.setAttribute('name', t);
+                    document.getElementById('sel').appendChild(opt);
+                });
+            }
+            function changesel(sel) {
+                if(sel.value == 'token-reset') {
+                    document.getElementById('bot').style.visibility = 'visible';
+                } else {
+                    document.getElementById('bot').style.visibility = 'hidden';
+                }
+            }
+        </script>
+    </body>
+</html>
